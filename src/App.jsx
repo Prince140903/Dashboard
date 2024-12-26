@@ -1,9 +1,29 @@
-import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import { Dashboard } from "./pages";
+import { Header, Sidebar } from "./components";
 
 function App() {
+  return (
+    <BrowserRouter>
+      <Header />
 
-  return <></>;
+      <div className="main d-flex">
+        <div className="sidebarWrapper">
+          <Sidebar />
+        </div>
+      </div>
+
+      <div className="content">
+        <Routes>
+          <Route path="/" exact={true} element={<Dashboard />} />
+          <Route path="/dashboard" exact={true} element={<Dashboard />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
 }
 
 export default App;
