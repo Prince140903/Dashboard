@@ -46,9 +46,9 @@
   font-family: "Nunito", serif !important;
 }
 
-.main .sidebarWrapper .sidebar ul li button * {
-  color: rgba(0, 0, 0, 0.7) !important;
-}
+/* .main .sidebarWrapper .sidebar ul li button * {
+  color: rgba(0, 0, 0, 0.7);
+} */
 
 .main .sidebarWrapper .sidebar ul li button .icon {
   display: flex;
@@ -60,7 +60,7 @@
 }
 
 .main .sidebarWrapper .sidebar ul li button .icon svg {
-  color: #000;
+  color: rgba(0, 0, 0, 0.7) !important;
   opacity: 0.8;
   font-size: 22px;
 }
@@ -80,6 +80,10 @@
 }
 .main .sidebarWrapper .sidebar ul li button.active {
   background: #f1f1f1 !important;
+  color: #0858f7 !important;
+}
+.main .sidebarWrapper .sidebar ul li button.active .icon svg {
+  color: #0858f7 !important;
 }
 
 .main .sidebarWrapper .sidebar ul li button.active .arrow {
@@ -135,6 +139,8 @@
 .main .sidebarWrapper .sidebar ul .submenuWrapper.colapse {
   height: auto;
   overflow: inherit;
+  opacity: 1;
+  padding: 10px 0px;
 }
 
 .main .sidebarWrapper .sidebar ul .submenuWrapper.colapse .submenu {
