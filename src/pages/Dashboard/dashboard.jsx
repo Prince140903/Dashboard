@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./dashboard.css";
 
 import Box from "./Box/box.jsx";
+import { Images } from "../../constants";
 import DynamicIcon from "../../constants/icons.jsx";
+
 import { PieChart } from "@mui/x-charts/PieChart";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import { Button } from "@mui/material";
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 
 const Dashboard = () => {
   const desktopOS = [
@@ -13,6 +21,20 @@ const Dashboard = () => {
   ];
 
   const valueFormatter = (value) => `${value}%`;
+
+  const [selections, setSelections] = useState({
+    select1: 10,
+    select2: 10,
+    select3: 10,
+    select4: 10,
+  });
+
+  const handleChange = (event, key) => {
+    setSelections((prev) => ({
+      ...prev,
+      [key]: event.target.value,
+    }));
+  };
 
   return (
     <>
@@ -70,8 +92,484 @@ const Dashboard = () => {
         <div className="card shadow border-0 p-3 mt-4">
           <h3 className="hd">Best Selling Products</h3>
 
-          <div className="row">
-            <div className="col"></div>
+          <div className="row cardFilters mt-3">
+            <div className="col-md-3">
+              <h4>Show by</h4>
+              <FormControl size="small" className="w-100">
+                <Select
+                  labelId="select1-label"
+                  id="select1"
+                  value={selections["select1"] || ""}
+                  onChange={(event) => handleChange(event, "select1")}
+                  className="w-100"
+                >
+                  <MenuItem value={10}>
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={20}>Ten</MenuItem>
+                  <MenuItem value={30}>Twenty</MenuItem>
+                  <MenuItem value={40}>Thirty</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+            <div className="col-md-3">
+              <h4>Show by</h4>
+              <FormControl size="small" className="w-100">
+                <Select
+                  labelId="select2-label"
+                  id="select2"
+                  value={selections["select2"] || ""}
+                  onChange={(event) => handleChange(event, "select2")}
+                  className="w-100"
+                >
+                  <MenuItem value={10}>
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={20}>Ten</MenuItem>
+                  <MenuItem value={30}>Twenty</MenuItem>
+                  <MenuItem value={40}>Thirty</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+            <div className="col-md-3">
+              <h4>Show by</h4>
+              <FormControl size="small" className="w-100">
+                <Select
+                  labelId="select3-label"
+                  id="select3"
+                  value={selections["select3"] || ""}
+                  onChange={(event) => handleChange(event, "select3")}
+                  className="w-100"
+                >
+                  <MenuItem value={10}>
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={20}>Ten</MenuItem>
+                  <MenuItem value={30}>Twenty</MenuItem>
+                  <MenuItem value={40}>Thirty</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+            <div className="col-md-3">
+              <h4>Show by</h4>
+              <FormControl size="small" className="w-100">
+                <Select
+                  labelId="select4-label"
+                  id="select4"
+                  value={selections["select4"] || ""}
+                  onChange={(event) => handleChange(event, "select4")}
+                  className="w-100"
+                >
+                  <MenuItem value={10}>
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={20}>Ten</MenuItem>
+                  <MenuItem value={30}>Twenty</MenuItem>
+                  <MenuItem value={40}>Thirty</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+          </div>
+
+          <div className="table-responsive mt-3">
+            <table className="table table-bordered v-align">
+              <thead className="thead-dark">
+                <tr>
+                  <th>UID</th>
+                  <th>PRODUCT</th>
+                  <th>CATEGORY</th>
+                  <th>BRAND</th>
+                  <th>PRICE</th>
+                  <th>STOCK</th>
+                  <th>RATING</th>
+                  <th>ORDER</th>
+                  <th>SALES</th>
+                  <th>ACTION</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>#1</td>
+                  <td>
+                    <div className="d-flex align-items-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img
+                            src={Images.Skirt}
+                            alt="skirt"
+                            className="w-100"
+                          />
+                        </div>
+                      </div>
+                      <div className="info pl-0">
+                        <h6>Tops and skirt set for Female</h6>
+                        <p>
+                          Women's exclusive summer Tops and skirt set for Female
+                          Tops and skirt set
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>womens</td>
+                  <td>richman</td>
+                  <td>
+                    <del className="old">₹210</del>
+                    <span className="new text-success">₹190</span>
+                  </td>
+                  <td>30</td>
+                  <td>4.9</td>
+                  <td>380</td>
+                  <td>₹38k</td>
+                  <td>
+                    <div className="d-flex actions align-items-center">
+                      <Button color="secondary" className="secondary">
+                        <DynamicIcon iconName="Visibility" />
+                      </Button>
+                      <Button color="success" className="success">
+                        <DynamicIcon iconName="Create" />
+                      </Button>
+                      <Button color="error" className="error">
+                        <DynamicIcon iconName="Delete" />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#1</td>
+                  <td>
+                    <div className="d-flex align-items-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img
+                            src={Images.Skirt}
+                            alt="skirt"
+                            className="w-100"
+                          />
+                        </div>
+                      </div>
+                      <div className="info pl-0">
+                        <h6>Tops and skirt set for Female</h6>
+                        <p>
+                          Women's exclusive summer Tops and skirt set for Female
+                          Tops and skirt set
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>womens</td>
+                  <td>richman</td>
+                  <td>
+                    <del className="old">₹210</del>
+                    <span className="new text-success">₹190</span>
+                  </td>
+                  <td>30</td>
+                  <td>4.9</td>
+                  <td>380</td>
+                  <td>₹38k</td>
+                  <td>
+                    <div className="d-flex actions align-items-center">
+                      <Button color="secondary" className="secondary">
+                        <DynamicIcon iconName="Visibility" />
+                      </Button>
+                      <Button color="success" className="success">
+                        <DynamicIcon iconName="Create" />
+                      </Button>
+                      <Button color="error" className="error">
+                        <DynamicIcon iconName="Delete" />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#1</td>
+                  <td>
+                    <div className="d-flex align-items-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img
+                            src={Images.Skirt}
+                            alt="skirt"
+                            className="w-100"
+                          />
+                        </div>
+                      </div>
+                      <div className="info pl-0">
+                        <h6>Tops and skirt set for Female</h6>
+                        <p>
+                          Women's exclusive summer Tops and skirt set for Female
+                          Tops and skirt set
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>womens</td>
+                  <td>richman</td>
+                  <td>
+                    <del className="old">₹210</del>
+                    <span className="new text-success">₹190</span>
+                  </td>
+                  <td>30</td>
+                  <td>4.9</td>
+                  <td>380</td>
+                  <td>₹38k</td>
+                  <td>
+                    <div className="d-flex actions align-items-center">
+                      <Button color="secondary" className="secondary">
+                        <DynamicIcon iconName="Visibility" />
+                      </Button>
+                      <Button color="success" className="success">
+                        <DynamicIcon iconName="Create" />
+                      </Button>
+                      <Button color="error" className="error">
+                        <DynamicIcon iconName="Delete" />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#1</td>
+                  <td>
+                    <div className="d-flex align-items-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img
+                            src={Images.Skirt}
+                            alt="skirt"
+                            className="w-100"
+                          />
+                        </div>
+                      </div>
+                      <div className="info pl-0">
+                        <h6>Tops and skirt set for Female</h6>
+                        <p>
+                          Women's exclusive summer Tops and skirt set for Female
+                          Tops and skirt set
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>womens</td>
+                  <td>richman</td>
+                  <td>
+                    <del className="old">₹210</del>
+                    <span className="new text-success">₹190</span>
+                  </td>
+                  <td>30</td>
+                  <td>4.9</td>
+                  <td>380</td>
+                  <td>₹38k</td>
+                  <td>
+                    <div className="d-flex actions align-items-center">
+                      <Button color="secondary" className="secondary">
+                        <DynamicIcon iconName="Visibility" />
+                      </Button>
+                      <Button color="success" className="success">
+                        <DynamicIcon iconName="Create" />
+                      </Button>
+                      <Button color="error" className="error">
+                        <DynamicIcon iconName="Delete" />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#1</td>
+                  <td>
+                    <div className="d-flex align-items-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img
+                            src={Images.Skirt}
+                            alt="skirt"
+                            className="w-100"
+                          />
+                        </div>
+                      </div>
+                      <div className="info pl-0">
+                        <h6>Tops and skirt set for Female</h6>
+                        <p>
+                          Women's exclusive summer Tops and skirt set for Female
+                          Tops and skirt set
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>womens</td>
+                  <td>richman</td>
+                  <td>
+                    <del className="old">₹210</del>
+                    <span className="new text-success">₹190</span>
+                  </td>
+                  <td>30</td>
+                  <td>4.9</td>
+                  <td>380</td>
+                  <td>₹38k</td>
+                  <td>
+                    <div className="d-flex actions align-items-center">
+                      <Button color="secondary" className="secondary">
+                        <DynamicIcon iconName="Visibility" />
+                      </Button>
+                      <Button color="success" className="success">
+                        <DynamicIcon iconName="Create" />
+                      </Button>
+                      <Button color="error" className="error">
+                        <DynamicIcon iconName="Delete" />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#1</td>
+                  <td>
+                    <div className="d-flex align-items-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img
+                            src={Images.Skirt}
+                            alt="skirt"
+                            className="w-100"
+                          />
+                        </div>
+                      </div>
+                      <div className="info pl-0">
+                        <h6>Tops and skirt set for Female</h6>
+                        <p>
+                          Women's exclusive summer Tops and skirt set for Female
+                          Tops and skirt set
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>womens</td>
+                  <td>richman</td>
+                  <td>
+                    <del className="old">₹210</del>
+                    <span className="new text-success">₹190</span>
+                  </td>
+                  <td>30</td>
+                  <td>4.9</td>
+                  <td>380</td>
+                  <td>₹38k</td>
+                  <td>
+                    <div className="d-flex actions align-items-center">
+                      <Button color="secondary" className="secondary">
+                        <DynamicIcon iconName="Visibility" />
+                      </Button>
+                      <Button color="success" className="success">
+                        <DynamicIcon iconName="Create" />
+                      </Button>
+                      <Button color="error" className="error">
+                        <DynamicIcon iconName="Delete" />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#1</td>
+                  <td>
+                    <div className="d-flex align-items-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img
+                            src={Images.Skirt}
+                            alt="skirt"
+                            className="w-100"
+                          />
+                        </div>
+                      </div>
+                      <div className="info pl-0">
+                        <h6>Tops and skirt set for Female</h6>
+                        <p>
+                          Women's exclusive summer Tops and skirt set for Female
+                          Tops and skirt set
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>womens</td>
+                  <td>richman</td>
+                  <td>
+                    <del className="old">₹210</del>
+                    <span className="new text-success">₹190</span>
+                  </td>
+                  <td>30</td>
+                  <td>4.9</td>
+                  <td>380</td>
+                  <td>₹38k</td>
+                  <td>
+                    <div className="d-flex actions align-items-center">
+                      <Button color="secondary" className="secondary">
+                        <DynamicIcon iconName="Visibility" />
+                      </Button>
+                      <Button color="success" className="success">
+                        <DynamicIcon iconName="Create" />
+                      </Button>
+                      <Button color="error" className="error">
+                        <DynamicIcon iconName="Delete" />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#1</td>
+                  <td>
+                    <div className="d-flex align-items-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img
+                            src={Images.Skirt}
+                            alt="skirt"
+                            className="w-100"
+                          />
+                        </div>
+                      </div>
+                      <div className="info pl-0">
+                        <h6>Tops and skirt set for Female</h6>
+                        <p>
+                          Women's exclusive summer Tops and skirt set for Female
+                          Tops and skirt set
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>womens</td>
+                  <td>richman</td>
+                  <td>
+                    <del className="old">₹210</del>
+                    <span className="new text-success">₹190</span>
+                  </td>
+                  <td>30</td>
+                  <td>4.9</td>
+                  <td>380</td>
+                  <td>₹38k</td>
+                  <td>
+                    <div className="d-flex actions align-items-center">
+                      <Button color="secondary" className="secondary">
+                        <DynamicIcon iconName="Visibility" />
+                      </Button>
+                      <Button color="success" className="success">
+                        <DynamicIcon iconName="Create" />
+                      </Button>
+                      <Button color="error" className="error">
+                        <DynamicIcon iconName="Delete" />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div className="d-flex tableFooter">
+                <Pagination
+                  count={10}
+                  variant="outlined"
+                  color="primary"
+                  showFirstButton
+                  showLastButton
+                  className="ml-auto"
+                />
+            </div>
           </div>
         </div>
       </div>

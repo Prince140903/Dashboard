@@ -117,3 +117,105 @@
   font-weight: bold;
   color: #403e57;
 }
+
+.cardFilters h4 {
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: capitalize;
+  color: #403e57;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: #403e57;
+}
+
+.table .thead-dark th {
+  background-color: #1966ee !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  font-size: 13px !important;
+}
+
+.table tbody td {
+  font-size: 13px !important;
+  color: #403e57;
+  font-weight: 500;
+}
+
+.table tbody .actions button {
+  min-width: 32px !important;
+  width: 32px !important;
+  height: 32px !important;
+  margin: 0px 3px !important;
+}
+
+.table tbody .actions button.secondary {
+  background: rgba(203, 60, 231, 0.2) !important;
+}
+.table tbody .actions button.success {
+  background: rgba(26, 159, 83, 0.2) !important;
+}
+.table tbody .actions button.error {
+  background: rgba(241, 17, 51, 0.2) !important;
+}
+
+.table tbody .actions button svg {
+  font-size: 20px !important;
+}
+
+.table.v-align td {
+  vertical-align: middle !important;
+}
+
+.table td .old,
+.table td .new {
+  display: block;
+  width: 100%;
+}
+
+.table td .imgWrapper {
+  width: 20%;
+  flex: 0 0 20%;
+}
+
+.table td .info {
+  width: 65%;
+  flex: 0 0 65%;
+}
+
+.table td .info h6 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.table td .info p {
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.table.v-align td .productBox {
+  width: 200px;
+}
+
+.table.v-align td .productBox .info {
+  width: 100%;
+}
+
+.tableFooter {
+  padding-bottom: 20px;
+}
+
+.css-vs6a7b-MuiButtonBase-root-MuiPaginationItem-root {
+  background: #0858f7;
+}

@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { Button } from "@mui/material";
 import DynamicIcon from "../../../constants/icons";
 
-const Box = (props) => {
+const Box = (props) => {  
   return (
     <Button
       className="dashboardBox"
