@@ -9,4 +9,5 @@
 body {
   font-family: "Nunito", serif !important;
   background: #ebe9e9 !important;
+  overflow-x: hidden;
 }

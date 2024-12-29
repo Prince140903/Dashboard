@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./sidebar.css";
 
 import { Button } from "@mui/material";
 import DynamicIcon from "../../constants/icons";
 import { Link } from "react-router-dom";
+import { MyContext } from "../../App";
 
 const Sidebar = () => {
   const [isActive, setisActive] = useState(0);
   const [isToggle, setIsToggle] = useState(false);
+
+  const context = useContext(MyContext);
 
   const isOpenSM = (index) => {
     setisActive(index);

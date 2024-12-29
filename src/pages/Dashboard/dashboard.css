@@ -1,6 +1,11 @@
 .main .content {
   width: 80%;
   flex: 0 0 80%;
+  transition: all 0.3s;
+}
+.main .content.toggle {
+  width: 100%;
+  flex: 0 0 100%;
 }
 
 .right-content {
@@ -214,6 +219,12 @@ p {
 
 .tableFooter {
   padding-bottom: 20px;
+}
+
+.tableFooter p {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 0px;
 }
 
 .css-vs6a7b-MuiButtonBase-root-MuiPaginationItem-root {

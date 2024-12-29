@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./header.css";
 
 import { Link } from "react-router-dom";
@@ -8,12 +8,15 @@ import { Button } from "@mui/material";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
+import { MyContext } from "../../App";
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [isOpenNotify, setisOpenNotify] = useState(false);
   const openAcc = Boolean(anchorEl);
   const openNotify = Boolean(isOpenNotify);
+
+  const context = useContext(MyContext);
 
   const handleOpenAcc = (event) => {
     setAnchorEl(event.currentTarget);
@@ -42,8 +45,15 @@ const Header = () => {
             </div>
 
             <div className="col-sm-3 d-flex align-items-center part2 pl-4">
-              <Button className="rounded-circle mr-3">
-                <DynamicIcon iconName="Menu" />
+              <Button
+                className="rounded-circle mr-3"
+                onClick={() => context.setIsToggle(!context.isToggle)}
+              >
+                {context.isToggle === false ? (
+                  <DynamicIcon iconName="MenuOpen" />
+                ) : (
+                  <DynamicIcon iconName="Menu" />
+                )}
               </Button>
               <div className="searchBox position-relative d-flex align-items-center">
                 <DynamicIcon iconName="SearchRounded" className="mr-2" />
