@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import "./sidebar.css";
 
 import { Button } from "@mui/material";
-import DynamicIcon from "../../constants/icons";
+import { DynamicIcon } from "../../constants";
 import { Link } from "react-router-dom";
 import { MyContext } from "../../App";
 

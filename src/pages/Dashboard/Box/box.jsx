@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import { Button } from "@mui/material";
-import DynamicIcon from "../../../constants/icons";
+import { DynamicIcon } from "../../../constants";
 
 const Box = (props) => {  
   return (

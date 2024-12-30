@@ -2,10 +2,17 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { Dashboard } from "./pages";
+import {
+  NotFound,
+  Dashboard,
+  Login,
+  Registration,
+  ForgetPassword,
+} from "./pages";
 import { Header, Sidebar } from "./components";
+import AuthLayout from "./Layouts/AuthLayouts";
 
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 
 const MyContext = createContext();
 
@@ -17,30 +24,47 @@ function App() {
     setIsToggle,
   };
 
-  // useEffect(() => {
-
-  // }, [])
-
   return (
     <BrowserRouter>
-      <MyContext.Provider value={values}>
-        <Header />
+      <Routes>
+        {/* Auth Pages */}
+        <Route path="/auth/" element={<AuthLayout />} >
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Registration />} />
+          <Route path="forget-password" element={<ForgetPassword />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
 
-        <div className="main d-flex">
-          <div
-            className={`sidebarWrapper ${isToggle === true ? "toggle" : ""}`}
-          >
-            <Sidebar />
-          </div>
+        {/* Main App */}
+        <Route
+          path="/*"
+          element={
+            <MyContext.Provider value={values}>
+              <Header />
 
-          <div className={`content ${isToggle === true ? "toggle" : ""}`}>
-            <Routes>
-              <Route path="/" exact={true} element={<Dashboard />} />
-              <Route path="/dashboard" exact={true} element={<Dashboard />} />
-            </Routes>
-          </div>
-        </div>
-      </MyContext.Provider>
+              <div className="main d-flex">
+                <div
+                  className={`sidebarWrapper ${
+                    isToggle === true ? "toggle" : ""
+                  }`}
+                >
+                  <Sidebar />
+                </div>
+
+                <div className={`content ${isToggle === true ? "toggle" : ""}`}>
+                  <Routes>
+                    <Route path="/" element={<Dashboard />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                </div>
+              </div>
+            </MyContext.Provider>
+          }
+        />
+
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </BrowserRouter>
   );
 }

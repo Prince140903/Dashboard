@@ -11,3 +11,12 @@ body {
   background: #ebe9e9 !important;
   overflow-x: hidden;
 }
+
+.btn-blue {
+  background: #0858f7 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+  text-transform: capitalize !important;
+  border-radius: 5px !important;
+}

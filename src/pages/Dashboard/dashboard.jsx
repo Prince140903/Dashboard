@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import "./dashboard.css";
 
 import Box from "./Box/box.jsx";
-import { Images } from "../../constants";
-import DynamicIcon from "../../constants/icons.jsx";
+import { Images, DynamicIcon } from "../../constants";
 
 import { PieChart } from "@mui/x-charts/PieChart";
 import MenuItem from "@mui/material/MenuItem";
@@ -561,15 +560,17 @@ const Dashboard = () => {
             </table>
 
             <div className="d-flex tableFooter">
-              <p>showing <b>12</b> of <b>60</b> results </p>
-                <Pagination
-                  count={10}
-                  variant="outlined"
-                  color="primary"
-                  showFirstButton
-                  showLastButton
-                  className="ml-auto"
-                />
+              <p>
+                showing <b>12</b> of <b>60</b> results{" "}
+              </p>
+              <Pagination
+                count={10}
+                variant="outlined"
+                color="primary"
+                showFirstButton
+                showLastButton
+                className="ml-auto"
+              />
             </div>
           </div>
         </div>
