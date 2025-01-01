@@ -115,19 +115,20 @@
 .card {
   margin: 20px 0px;
   border-radius: 10px;
+  background: var(--body_backgroundLight);
 }
 
 .card .hd {
   font-size: 18px;
   font-weight: bold;
-  color: #403e57;
+  color: var(--body_color);
 }
 
 .cardFilters h4 {
   font-size: 14px;
   font-weight: 800;
   text-transform: capitalize;
-  color: #403e57;
+  color: var(--body_color);
 }
 
 h1,
@@ -137,7 +138,7 @@ h4,
 h5,
 h6,
 p {
-  color: #403e57;
+  color: var(--body_color);
 }
 
 .table .thead-dark th {
@@ -148,8 +149,9 @@ p {
 
 .table tbody td {
   font-size: 13px !important;
-  color: #403e57;
+  color: var(--body_color);
   font-weight: 500;
+  border-color: var(--btn_hover) !important;
 }
 
 .table tbody .actions button {
@@ -228,5 +230,23 @@ p {
 }
 
 .css-vs6a7b-MuiButtonBase-root-MuiPaginationItem-root {
-  background: #0858f7;
+  background: var(--dropdown) !important;
+  color: var(--body_color) !important;
+}
+
+.Mui-selected {
+  background: #0858f7 !important;
+  color: #fff !important;
+}
+
+.css-btxnvc-MuiPaginationItem-root {
+  color: var(--body_color) !important;
+  height: 32px !important;
+  font-size: 1rem !important;
+  background: var(--dropdown) !important;
+}
+
+.cardFilters .drop {
+  background: var(--dropdown) !important;
+  color: var(--body_color) !important;
 }

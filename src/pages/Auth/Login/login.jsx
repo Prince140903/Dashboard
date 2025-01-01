@@ -18,7 +18,7 @@ const Login = () => {
             <h5 className="font-weight-bold">Login to CupCake</h5>
           </div>
 
-          <div className="wrapper mt-3 card border p-4">
+          <div className="wrapper mt-3 card p-4">
             <form>
               <div className="form-group mb-3 position-relative">
                 <span className="icon">
@@ -28,6 +28,7 @@ const Login = () => {
                   type="text"
                   className="form-control"
                   placeholder="Enter Email"
+                  autoFocus
                 />
               </div>
               <div className="form-group mb-3 position-relative">
@@ -68,11 +69,22 @@ const Login = () => {
                   <span className="line"></span>
                 </div>
 
-                <Button variant="outlined" className="w-100 btn-blue Google">
-                  &nbsp; Sign in With Google
-                </Button>
+                <div className="Google">
+                  <Button variant="outlined" className="w-100 btn-blue">
+                    &nbsp; Sign in With Google
+                  </Button>
+                </div>
               </div>
             </form>
+          </div>
+
+          <div className="wrapper mt-3 border footer p-3 text-center">
+            <span className="tag">
+              Don't have an account?
+              <Link to={"/auth/register"} className="link color ml-2">
+                Register
+              </Link>
+            </span>
           </div>
         </div>
       </div>

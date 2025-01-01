@@ -34,6 +34,12 @@ const Header = () => {
     setisOpenNotify(false);
   };
 
+  const toggleTheme = () => {
+    context.setThemeMode((prevTheme) =>
+      prevTheme === "light" ? "dark" : "light"
+    );
+  };
+
   return (
     <>
       <header className="d-flex align-items-center">
@@ -42,7 +48,7 @@ const Header = () => {
             <div className="col-sm-2 part1">
               <Link to={"/"} className="d-flex align-items-center logo">
                 <img src={Images.Logo} alt="Logo" />
-                <span className="ml-2">CUPCAKE</span>
+                <span>CUPCAKE</span>
               </Link>
             </div>
 
@@ -64,8 +70,12 @@ const Header = () => {
             </div>
 
             <div className="col-sm-7 d-flex align-items-center justify-content-end part3">
-              <Button className="rounded-circle mr-3">
-                <DynamicIcon iconName="LightModeOutlined" />
+              <Button className="rounded-circle mr-3" onClick={toggleTheme}>
+                {context.ThemeMode === "light" ? (
+                  <DynamicIcon iconName="LightModeOutlined" />
+                ) : (
+                  <DynamicIcon iconName="DarkModeOutlined" />
+                )}
               </Button>
               <Button className="rounded-circle mr-3">
                 <DynamicIcon iconName="ShoppingCartOutlined" />
@@ -140,7 +150,9 @@ const Header = () => {
               </div>
 
               {isLogin === false ? (
-                <Button className="btn-blue btn-style">Sign In</Button>
+                <Link to={"/auth/login"}>
+                  <Button className="btn-blue btn-style">Log In</Button>
+                </Link>
               ) : (
                 <div className="myAccWrapper">
                   <Button

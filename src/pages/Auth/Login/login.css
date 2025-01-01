@@ -12,7 +12,7 @@
   width: 100%;
   height: 100vh;
   padding: 35px 25px;
-  background: #fff;
+  background: var(--body_background);
 }
 
 .loginSection .loginBox {
@@ -24,12 +24,13 @@
 .loginSection .loginBox .wrapper {
   width: 100%;
   height: auto;
-  background: #f0f0f0;
+  background: var(--dropdown);
   position: relative;
 }
 
 .loginSection .loginBox .wrapper .form-control {
-  background: #fff !important;
+  background: var(--body_background) !important;
+
   box-shadow: none !important;
   outline: none !important;
   border-radius: 8px !important;
@@ -37,6 +38,10 @@
   font-weight: 600 !important;
   height: 45px;
   padding-left: 40px;
+}
+
+.loginSection .loginBox .wrapper .form-control::placeholder {
+  color: var(--body_color) !important;
 }
 
 .loginSection .loginBox .wrapper .form-control:focus {
@@ -55,6 +60,7 @@
 }
 
 .loginSection .loginBox .wrapper .form-group .icon svg {
+  color: var(--body_color) !important;
   opacity: 0.8;
 }
 
@@ -71,7 +77,8 @@
 
 .link {
   font-size: 14px;
-  color: #5e5d72;
+  /* color: #5e5d72; */
+  color: var(--body_color);
 }
 .link:hover {
   color: #0858f7 !important;
@@ -82,7 +89,7 @@
   display: block;
   width: 35%;
   height: 1px;
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--body_color);
 }
 
 .loginSection .loginBox .wrapper .or span.txt {
@@ -93,4 +100,23 @@
   font-weight: 600;
   width: 50px;
   height: 50px;
+  color: var(--body_color);
+}
+
+.color {
+  color: #0858f7;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.Google {
+  padding-top: 20px;
+}
+
+.Google button {
+  padding: 10px !important;
+}
+
+.tag {
+  color: var(--body_color);
 }

@@ -12,23 +12,35 @@ import {
 import { Header, Sidebar } from "./components";
 import AuthLayout from "./Layouts/AuthLayouts";
 
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 const MyContext = createContext();
 
 function App() {
   const [isToggle, setIsToggle] = useState(false);
 
+  const [ThemeMode, setThemeMode] = useState(
+    () => localStorage.getItem("ThemeMode") || "light"
+  );
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", ThemeMode);
+    localStorage.setItem("ThemeMode", ThemeMode);
+  }, [ThemeMode]);
+
+
   const values = {
     isToggle,
     setIsToggle,
+    ThemeMode,
+    setThemeMode,
   };
 
   return (
     <BrowserRouter>
       <Routes>
         {/* Auth Pages */}
-        <Route path="/auth/" element={<AuthLayout />} >
+        <Route path="/auth/" element={<AuthLayout />}>
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Registration />} />
           <Route path="forget-password" element={<ForgetPassword />} />

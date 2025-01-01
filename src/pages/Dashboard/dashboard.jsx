@@ -100,7 +100,7 @@ const Dashboard = () => {
                   id="select1"
                   value={selections["select1"] || ""}
                   onChange={(event) => handleChange(event, "select1")}
-                  className="w-100"
+                  className="w-100 drop"
                 >
                   <MenuItem value={10}>
                     <em>None</em>
@@ -119,7 +119,7 @@ const Dashboard = () => {
                   id="select2"
                   value={selections["select2"] || ""}
                   onChange={(event) => handleChange(event, "select2")}
-                  className="w-100"
+                  className="w-100  drop"
                 >
                   <MenuItem value={10}>
                     <em>None</em>
@@ -138,7 +138,7 @@ const Dashboard = () => {
                   id="select3"
                   value={selections["select3"] || ""}
                   onChange={(event) => handleChange(event, "select3")}
-                  className="w-100"
+                  className="w-100  drop"
                 >
                   <MenuItem value={10}>
                     <em>None</em>
@@ -157,7 +157,7 @@ const Dashboard = () => {
                   id="select4"
                   value={selections["select4"] || ""}
                   onChange={(event) => handleChange(event, "select4")}
-                  className="w-100"
+                  className="w-100  drop"
                 >
                   <MenuItem value={10}>
                     <em>None</em>
