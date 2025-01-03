@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./header.css";
 
+import { UserImg } from "../../components";
 import { Link } from "react-router-dom";
 import { Images, DynamicIcon } from "../../constants";
 import { Button } from "@mui/material";
@@ -13,7 +14,7 @@ const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [isOpenNotify, setisOpenNotify] = useState(false);
 
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
 
   const openAcc = Boolean(anchorEl);
   const openNotify = Boolean(isOpenNotify);
@@ -159,11 +160,7 @@ const Header = () => {
                     className="myAcc d-flex align-items-center"
                     onClick={handleOpenAcc}
                   >
-                    <div className="userImg">
-                      <span className="rounded-cirlce">
-                        <img src={Images.userImg} alt="userImg" width={40} />
-                      </span>
-                    </div>
+                    <UserImg img={Images.userImg} width='40' />
 
                     <div className="userInfo">
                       <h4>Aaditya Revandkar</h4>

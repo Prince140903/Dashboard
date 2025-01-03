@@ -8,6 +8,7 @@ import {
   Login,
   Registration,
   ForgetPassword,
+  ProductDetails,
 } from "./pages";
 import { Header, Sidebar } from "./components";
 import AuthLayout from "./Layouts/AuthLayouts";
@@ -27,7 +28,6 @@ function App() {
     document.documentElement.setAttribute("data-theme", ThemeMode);
     localStorage.setItem("ThemeMode", ThemeMode);
   }, [ThemeMode]);
-
 
   const values = {
     isToggle,
@@ -67,6 +67,7 @@ function App() {
                   <Routes>
                     <Route path="/" element={<Dashboard />} />
                     <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/product-details" element={<ProductDetails />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </div>

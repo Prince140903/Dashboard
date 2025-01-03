@@ -4,24 +4,30 @@
   --body_background: #ebe9e9;
   --body_backgroundLight: #fff;
   --body_color: #403e57;
+  --sidebar_color: #403e57;
   --btn_blue: #0858f7;
   --rounded_btn: #f0f5ff;
   --btn_hover: #f1f1f1;
   --btn_active: #ebf6ff;
   --btn_active-color: #0858f7;
   --dropdown: #f0f0f0;
+  --click: #000;
+  --review-section: #f8f8f8;
 }
 
 [data-theme="dark"] {
   --body_background: #071739;
   --body_backgroundLight: #112143;
-  --body_color: #b4b4b4;
+  --body_color: #e4e4e4;
+  --sidebar_color: #b4b4b4;
   --btn_blue: #0858f7;
   --rounded_btn: #132956;
   --btn_hover: #253557;
   --btn_active: #132b53;
   --btn_active-color: #94b7f4;
   --dropdown: #1b2b4d;
+  --click: #fff;
+  --review-section: #071739;
 }
 
 * {

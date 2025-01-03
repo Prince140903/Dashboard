@@ -46,7 +46,8 @@
 
 .main .sidebarWrapper .sidebar ul li button {
   text-align: left;
-  color: var(--body_color) !important;
+  /* color: var(--body_color) !important; */
+  color: var(--sidebar_color) !important;
   justify-content: left;
   border-radius: 10px !important;
   padding: 12px 15px !important;
@@ -66,7 +67,8 @@
 }
 
 .main .sidebarWrapper .sidebar ul li button .icon svg {
-  color: var(--body_color) !important;
+  /* color: var(--body_color) !important; */
+  color: var(--sidebar_color) !important;
   opacity: 0.8;
   font-size: 22px;
 }
@@ -110,7 +112,7 @@
   position: absolute;
   top: 0px;
   left: 27px;
-  background: var(--body_color);
+  background: var(--sidebar_color) !important;
 }
 
 .main .sidebarWrapper .sidebar ul .submenu li {
@@ -119,7 +121,8 @@
 }
 
 .main .sidebarWrapper .sidebar ul .submenu li a {
-  color: var(--body_color) !important;
+  /* color: var(--body_color) !important; */
+  color: var(--sidebar_color) !important;
   text-decoration: none;
   display: block;
   padding: 6px 0px;
