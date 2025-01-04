@@ -2,14 +2,17 @@ import React, { useState } from "react";
 import "./productDetails.css";
 import { Images } from "../../constants";
 
-import { Button } from "@mui/material";
+import {
+  Button,
+  Breadcrumbs,
+  styled,
+  emphasize,
+  Chip,
+  Rating,
+} from "@mui/material";
 import { UserImg } from "../../components";
-import { Breadcrumbs } from "@mui/material";
 import { DynamicIcon } from "../../constants";
-import { styled, emphasize } from "@mui/material/styles";
-import Chip from "@mui/material/Chip";
 import Slider from "react-slick";
-import Rating from "@mui/material/Rating";
 
 const ProductDetails = () => {
   const [ActiveImg, setActiveImg] = useState(1);
@@ -74,7 +77,7 @@ const ProductDetails = () => {
                     src={Images[`Product${ActiveImg}`]}
                     alt="display"
                     className="w-100"
-                    draggable='false'
+                    draggable="false"
                   />
                 </div>
                 <Slider {...settings} className="mb-2">

@@ -9,6 +9,7 @@ import {
   Registration,
   ForgetPassword,
   ProductDetails,
+  ProductUpload,
 } from "./pages";
 import { Header, Sidebar } from "./components";
 import AuthLayout from "./Layouts/AuthLayouts";
@@ -67,7 +68,11 @@ function App() {
                   <Routes>
                     <Route path="/" element={<Dashboard />} />
                     <Route path="/dashboard" element={<Dashboard />} />
-                    <Route path="/product-details" element={<ProductDetails />} />
+                    <Route
+                      path="/product-details"
+                      element={<ProductDetails />}
+                    />
+                    <Route path="/product-upload" element={<ProductUpload />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </div>
