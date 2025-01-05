@@ -10,8 +10,9 @@ import {
   ForgetPassword,
   ProductDetails,
   ProductUpload,
+  ProductList,
 } from "./pages";
-import { Header, Sidebar } from "./components";
+import { Header, Sidebar, Footer } from "./components";
 import AuthLayout from "./Layouts/AuthLayouts";
 
 import { createContext, useEffect, useState } from "react";
@@ -67,14 +68,12 @@ function App() {
                 <div className={`content ${isToggle === true ? "toggle" : ""}`}>
                   <Routes>
                     <Route path="/" element={<Dashboard />} />
-                    <Route path="/dashboard" element={<Dashboard />} />
-                    <Route
-                      path="/product-details"
-                      element={<ProductDetails />}
-                    />
+                    <Route path="/product-details" element={<ProductDetails />} />
                     <Route path="/product-upload" element={<ProductUpload />} />
+                    <Route path="/product-list" element={<ProductList />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>
+                  <Footer />
                 </div>
               </div>
             </MyContext.Provider>

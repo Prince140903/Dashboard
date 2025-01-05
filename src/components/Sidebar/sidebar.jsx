@@ -21,20 +21,19 @@ const Sidebar = () => {
     <div className="sidebar">
       <ul className="mb-0">
         <li>
-          <Button
-            className={`w-100 ${
-              isActive === 0 && isToggle === true ? "active" : ""
-            }`}
-            onClick={() => isOpenSM(0)}
-          >
-            <span className="icon">
-              <DynamicIcon iconName="Dashboard" />
-            </span>
-            Dashboard
-            <span className="arrow">
-              <DynamicIcon iconName="KeyboardArrowRight" />
-            </span>
-          </Button>
+          <Link to="/">
+            <Button
+              className={`w-100 ${
+                isActive === 0 && isToggle === true ? "active" : ""
+              }`}
+              onClick={() => isOpenSM(0)}
+            >
+              <span className="icon">
+                <DynamicIcon iconName="Dashboard" />
+              </span>
+              Dashboard
+            </Button>
+          </Link>
         </li>
         <li>
           <Button
@@ -44,9 +43,9 @@ const Sidebar = () => {
             onClick={() => isOpenSM(1)}
           >
             <span className="icon">
-              <DynamicIcon iconName="Layers" />
+              <DynamicIcon iconName="VpnKey" />
             </span>
-            Products
+            Authentication
             <span className="arrow">
               <DynamicIcon iconName="KeyboardArrowRight" />
             </span>
@@ -58,7 +57,40 @@ const Sidebar = () => {
           >
             <ul className="submenu">
               <li>
-                <Link to={"#"}>Product List</Link>
+                <Link to={"/auth/login"}>Login</Link>
+              </li>
+              <li>
+                <Link to={"/auth/register"}>Register</Link>
+              </li>
+              <li>
+                <Link to={"/auth/forget-password"}>Forget Password</Link>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <Button
+            className={`w-100 ${
+              isActive === 2 && isToggle === true ? "active" : ""
+            }`}
+            onClick={() => isOpenSM(2)}
+          >
+            <span className="icon">
+              <DynamicIcon iconName="Layers" />
+            </span>
+            Products
+            <span className="arrow">
+              <DynamicIcon iconName="KeyboardArrowRight" />
+            </span>
+          </Button>
+          <div
+            className={`submenuWrapper ${
+              isActive === 2 && isToggle === true ? "colapse" : "colapsed"
+            }`}
+          >
+            <ul className="submenu">
+              <li>
+                <Link to={"/product-list"}>Product List</Link>
               </li>
               <li>
                 <Link to={"/product-details"}>Product View</Link>
@@ -73,9 +105,9 @@ const Sidebar = () => {
           <Link to={"/"}>
             <Button
               className={`w-100 ${
-                isActive === 2 && isToggle === true ? "active" : ""
+                isActive === 3 && isToggle === true ? "active" : ""
               }`}
-              onClick={() => isOpenSM(2)}
+              onClick={() => isOpenSM(3)}
             >
               <span className="icon">
                 <DynamicIcon iconName="ShoppingCart" />
@@ -91,9 +123,9 @@ const Sidebar = () => {
           <Link to={"/"}>
             <Button
               className={`w-100 ${
-                isActive === 3 && isToggle === true ? "active" : ""
+                isActive === 4 && isToggle === true ? "active" : ""
               }`}
-              onClick={() => isOpenSM(3)}
+              onClick={() => isOpenSM(4)}
             >
               <span className="icon">
                 <DynamicIcon iconName="Message" />
@@ -109,9 +141,9 @@ const Sidebar = () => {
           <Link to={"/"}>
             <Button
               className={`w-100 ${
-                isActive === 4 && isToggle === true ? "active" : ""
+                isActive === 5 && isToggle === true ? "active" : ""
               }`}
-              onClick={() => isOpenSM(4)}
+              onClick={() => isOpenSM(5)}
             >
               <span className="icon">
                 <DynamicIcon iconName="Notifications" />
@@ -132,147 +164,6 @@ const Sidebar = () => {
               Settings
             </Button>
           </Link>
-        </li>
-        <li>
-          <Link to={"/"}>
-            <Button className="w-100">
-              <span className="icon">
-                <DynamicIcon iconName="Notifications" />
-              </span>
-              Notifications
-              <span className="arrow">
-                <DynamicIcon iconName="KeyboardArrowRight" />
-              </span>
-            </Button>
-          </Link>
-        </li>
-        <li>
-          <Link to={"/"}>
-            <Button className="w-100">
-              <span className="icon">
-                <DynamicIcon iconName="Notifications" />
-              </span>
-              Notifications
-              <span className="arrow">
-                <DynamicIcon iconName="KeyboardArrowRight" />
-              </span>
-            </Button>
-          </Link>
-        </li>
-        <li>
-          <Link to={"/"}>
-            <Button className="w-100">
-              <span className="icon">
-                <DynamicIcon iconName="Notifications" />
-              </span>
-              Notifications
-              <span className="arrow">
-                <DynamicIcon iconName="KeyboardArrowRight" />
-              </span>
-            </Button>
-          </Link>
-        </li>
-        <li>
-          <Link to={"/"}>
-            <Button className="w-100">
-              <span className="icon">
-                <DynamicIcon iconName="Notifications" />
-              </span>
-              Notifications
-              <span className="arrow">
-                <DynamicIcon iconName="KeyboardArrowRight" />
-              </span>
-            </Button>
-          </Link>
-        </li>
-        <li>
-          <Link to={"/"}></Link>
-          <Button className="w-100">
-            <span className="icon">
-              <DynamicIcon iconName="Notifications" />
-            </span>
-            Notifications
-            <span className="arrow">
-              <DynamicIcon iconName="KeyboardArrowRight" />
-            </span>
-          </Button>
-        </li>
-        <li>
-          <Button className="w-100">
-            <span className="icon">
-              <DynamicIcon iconName="Notifications" />
-            </span>
-            Notifications
-            <span className="arrow">
-              <DynamicIcon iconName="KeyboardArrowRight" />
-            </span>
-          </Button>
-        </li>
-        <li>
-          <Button className="w-100">
-            <span className="icon">
-              <DynamicIcon iconName="Notifications" />
-            </span>
-            Notifications
-            <span className="arrow">
-              <DynamicIcon iconName="KeyboardArrowRight" />
-            </span>
-          </Button>
-        </li>
-        <li>
-          <Button className="w-100">
-            <span className="icon">
-              <DynamicIcon iconName="Notifications" />
-            </span>
-            Notifications
-            <span className="arrow">
-              <DynamicIcon iconName="KeyboardArrowRight" />
-            </span>
-          </Button>
-        </li>
-        <li>
-          <Button className="w-100">
-            <span className="icon">
-              <DynamicIcon iconName="Notifications" />
-            </span>
-            Notifications
-            <span className="arrow">
-              <DynamicIcon iconName="KeyboardArrowRight" />
-            </span>
-          </Button>
-        </li>
-        <li>
-          <Button className="w-100">
-            <span className="icon">
-              <DynamicIcon iconName="Notifications" />
-            </span>
-            Notifications
-            <span className="arrow">
-              <DynamicIcon iconName="KeyboardArrowRight" />
-            </span>
-          </Button>
-        </li>
-        <li>
-          <Button className="w-100">
-            <span className="icon">
-              <DynamicIcon iconName="Notifications" />
-            </span>
-            Notifications
-            <span className="arrow">
-              <DynamicIcon iconName="KeyboardArrowRight" />
-            </span>
-          </Button>
-        </li>
-        <li>
-          <Button className="w-100">
-            <span className="icon">
-              <DynamicIcon iconName="Notifications" />
-            </span>
-            Notifications
-            <span className="arrow">
-              <DynamicIcon iconName="KeyboardArrowRight" />
-            </span>
-          </Button>
         </li>
       </ul>
 

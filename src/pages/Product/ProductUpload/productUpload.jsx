@@ -11,7 +11,7 @@ import {
   Select,
   FormControl,
 } from "@mui/material";
-import { DynamicIcon } from "../../constants";
+import { DynamicIcon } from "../../../constants";
 
 const ProductUpload = () => {
   const [userImages, setUserImages] = useState([]);
@@ -61,16 +61,24 @@ const ProductUpload = () => {
     <>
       <div className="w-100 right-content">
         <div className="card shadow border-0 w-100 flex-row p-4 m-0">
-          <h5 className="mb-0">Product View</h5>
+          <h5 className="mb-0">Product Upload</h5>
           <Breadcrumbs aria-label="breadcrumb" className="ml-auto breadcrumbs_">
             <StyledBreadcrumb
               component="a"
-              href="#"
+              href="/"
               label="Dashboard"
               icon={<DynamicIcon iconName="Home" />}
             />
-            <StyledBreadcrumb component="a" href="#" label="Product" />
-            <StyledBreadcrumb component="a" href="#" label="Product View" />
+            <StyledBreadcrumb
+              component="a"
+              href="/product-list"
+              label="Product"
+            />
+            <StyledBreadcrumb
+              component="a"
+              href="/product-upload"
+              label="Product Upload"
+            />
           </Breadcrumbs>
         </div>
 
@@ -250,7 +258,10 @@ const ProductUpload = () => {
                   style={{ position: "relative" }}
                   className="imgView"
                 >
-                  <div className="remove" onClick={() => handleRemoveImg(index)}>
+                  <div
+                    className="remove"
+                    onClick={() => handleRemoveImg(index)}
+                  >
                     <DynamicIcon iconName="Delete" />
                   </div>
                   <img

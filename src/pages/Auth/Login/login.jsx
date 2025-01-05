@@ -78,7 +78,7 @@ const Login = () => {
             </form>
           </div>
 
-          <div className="wrapper mt-3 border footer p-3 text-center">
+          <div className="wrapper mt-3 card p-3 text-center">
             <span className="tag">
               Don't have an account?
               <Link to={"/auth/register"} className="link color ml-2">

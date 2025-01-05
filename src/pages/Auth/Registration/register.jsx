@@ -124,7 +124,7 @@ const Register = () => {
                   </div>
 
                   <div className="form-group mb-3 position-relative text-center">
-                    <div className="d-flex align-items-center justify-content-center or mt-3">
+                    <div className="d-flex align-items-center justify-content-center or">
                       <span className="line"></span>
                       <span className="txt">or</span>
                       <span className="line"></span>
@@ -138,7 +138,7 @@ const Register = () => {
                   </div>
                 </form>
               </div>
-              <div className="wrapper mt-3 border footer p-3 text-center">
+              <div className="wrapper border footer p-3 text-center">
                 <span style={{ color: "var(--body_color)" }}>
                   Already have an account?
                   <Link to={"/auth/login"} className="link color ml-2">

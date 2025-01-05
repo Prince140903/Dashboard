@@ -1,32 +1,39 @@
 import React, { useState } from "react";
-import "./dashboard.css";
+import "./productList.css";
 
-import { Box } from "../../components";
-import { Images, DynamicIcon } from "../../constants";
-
-import { PieChart } from "@mui/x-charts/PieChart";
+import { Images, DynamicIcon } from "../../../constants";
+import { Box } from "../../../components";
 import {
   Button,
-  Pagination,
+  Breadcrumbs,
+  styled,
+  emphasize,
+  Chip,
   FormControl,
-  MenuItem,
   Select,
+  MenuItem,
+  Pagination,
 } from "@mui/material";
 
-const Dashboard = () => {
-  const desktopOS = [
-    { id: "Windows", value: 50 },
-    { id: "macOS", value: 30 },
-    { id: "Linux", value: 20 },
-  ];
-
-  const valueFormatter = (value) => `${value}%`;
-
-  const [selections, setSelections] = useState({
-    select1: 10,
-    select2: 10,
-    select3: 10,
-    select4: 10,
+const ProductList = () => {
+  const StyledBreadcrumb = styled(Chip)(({ theme }) => {
+    const backgroundColor =
+      theme.palette.mode === "light"
+        ? theme.palette.grey[100]
+        : theme.palette.grey[800];
+    return {
+      backgroundColor,
+      height: theme.spacing(3),
+      color: theme.palette.text.primary,
+      fontWeight: theme.typography.fontWeightRegular,
+      "&:hover, &:focus": {
+        backgroundColor: emphasize(backgroundColor, 0.06),
+      },
+      "&:active": {
+        boxShadow: theme.shadows[1],
+        backgroundColor: emphasize(backgroundColor, 0.12),
+      },
+    };
   });
 
   const handleChange = (event, key) => {
@@ -36,64 +43,66 @@ const Dashboard = () => {
     }));
   };
 
+  const [selections, setSelections] = useState({
+    select1: 10,
+    select2: 10,
+    select3: 10,
+    select4: 10,
+  });
+
   return (
     <>
       <div className="right-content w-100 ">
-        <div className="row boxRow">
-          <div className="col-md-8">
-            <div className="boxWrapper d-flex">
-              <Box
-                choice={true}
-                color={["#1da256", "#48d483"]}
-                grow={true}
-                icon={<DynamicIcon iconName="AccountCircleOutlined" />}
-              />
-              <Box
-                choice={true}
-                color={["#c012e2", "#eb64fe"]}
-                icon={<DynamicIcon iconName="ShoppingCartOutlined" />}
-              />
-              <Box
-                choice={true}
-                color={["#2c78e5", "#60aff5"]}
-                icon={<DynamicIcon iconName="LocalMallOutlined" />}
-              />
-              <Box
-                choice={true}
-                grow={true}
-                color={["#e1950e", "#f3cd29"]}
-                icon={<DynamicIcon iconName="StarsOutlined" />}
-              />
-            </div>
-          </div>
+        <div className="card shadow border-0 w-100 flex-row p-4 m-0">
+          <h5 className="mb-0">Product List</h5>
+          <Breadcrumbs aria-label="breadcrumb" className="ml-auto breadcrumbs_">
+            <StyledBreadcrumb
+              component="a"
+              href="/"
+              label="Dashboard"
+              icon={<DynamicIcon iconName="Home" />}
+            />
+            <StyledBreadcrumb
+              component="a"
+              href="/product-list"
+              label="Product"
+            />
+            <StyledBreadcrumb
+              component="a"
+              href="/product-list"
+              label="Product List"
+            />
+          </Breadcrumbs>
+        </div>
 
-          <div className="col-md-4 pl-0">
-            <div className="box graphBox">
-              <div className="w-100 bottomEle">
-                <h6 className="text-white mb-0">Total Sales</h6>
-                <h2 className="text-white">₹3,00,000</h2>
-                <PieChart
-                  series={[
-                    {
-                      data: desktopOS,
-                      highlightScope: { fade: "global", highlight: "item" },
-                      faded: {
-                        innerRadius: 30,
-                        additionalRadius: -30,
-                        color: "gray",
-                      },
-                      valueFormatter,
-                    },
-                  ]}
-                  height={200}
-                  width={400}
-                />
-              </div>
-            </div>
+        <div className="row p-4">
+          <div className="col-md-3">
+            <Box
+              color={["#ed68ff", "#48d483"]}
+              icon={<DynamicIcon iconName="Pending" />} //linear-gradient(#ed68ff,#be0ee1)
+            ></Box>
+          </div>
+          <div className="col-md-3">
+            <Box
+              color={["#ed68ff", "#be0ee1"]}
+              icon={<DynamicIcon iconName="LocalShipping" />}
+            ></Box>
+          </div>
+          <div className="col-md-3">
+            <Box
+              color={["#2c78e5", "#60aff5"]}
+              icon={<DynamicIcon iconName="LocalMallOutlined" />}
+            ></Box>
+          </div>
+          <div className="col-md-3">
+            <Box
+              color={["#e1950e", "#f3cd29"]}
+              icon={<DynamicIcon iconName="StarsOutlined" />}
+            ></Box>
           </div>
         </div>
 
-        <div className="card shadow border-0 p-3 mt-4">
+        <div className="card shadow border-0 p-3 mt-0">
           <h3 className="hd">Best Selling Products</h3>
 
           <div className="row cardFilters mt-3">
@@ -584,4 +593,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default ProductList;

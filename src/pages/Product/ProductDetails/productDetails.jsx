@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./productDetails.css";
-import { Images } from "../../constants";
+import { Images } from "../../../constants";
 
 import {
   Button,
@@ -10,8 +10,8 @@ import {
   Chip,
   Rating,
 } from "@mui/material";
-import { UserImg } from "../../components";
-import { DynamicIcon } from "../../constants";
+import { UserImg } from "../../../components";
+import { DynamicIcon } from "../../../constants";
 import Slider from "react-slick";
 
 const ProductDetails = () => {
@@ -58,12 +58,20 @@ const ProductDetails = () => {
           <Breadcrumbs aria-label="breadcrumb" className="ml-auto breadcrumbs_">
             <StyledBreadcrumb
               component="a"
-              href="#"
+              href="/"
               label="Dashboard"
               icon={<DynamicIcon iconName="Home" />}
             />
-            <StyledBreadcrumb component="a" href="#" label="Product" />
-            <StyledBreadcrumb component="a" href="#" label="Product View" />
+            <StyledBreadcrumb
+              component="a"
+              href="/product-list"
+              label="Product"
+            />
+            <StyledBreadcrumb
+              component="a"
+              href="/product-details"
+              label="Product View"
+            />
           </Breadcrumbs>
         </div>
 

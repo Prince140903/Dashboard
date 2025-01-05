@@ -117,8 +117,20 @@ header button.rounded-circle svg {
   opacity: 0.7;
 }
 
+.css-x6cj71-MuiPaper-root-MuiPopover-paper-MuiMenu-paper::before {
+  background: var(--dropdown) !important;
+}
+
 #account-menu li {
   padding: 12px 15px !important;
+  color: var(--sidebar_color);
+}
+#account-menu li svg {
+  color: var(--sidebar_color);
+}
+
+#Notifications svg {
+  color: var(--sidebar_color);
 }
 
 #Notifications .MuiPaper-elevation {
@@ -126,6 +138,7 @@ header button.rounded-circle svg {
   width: 250px !important;
   left: auto !important;
   top: 8% !important;
+  color: var(--sidebar_color) !important;
 }
 
 .btn-style {
