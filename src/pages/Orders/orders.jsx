@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./productList.css";
+import "./orders.css";
 
-import { Images, DynamicIcon } from "../../../constants";
-import { Box } from "../../../components";
+import { Images, DynamicIcon } from "../../constants";
+import { Box, UserImg } from "../../components";
 import {
   Button,
   Breadcrumbs,
@@ -15,7 +15,7 @@ import {
   Pagination,
 } from "@mui/material";
 
-const ProductList = () => {
+const Orders = () => {
   const StyledBreadcrumb = styled(Chip)(({ theme }) => {
     const backgroundColor =
       theme.palette.mode === "light"
@@ -54,7 +54,7 @@ const ProductList = () => {
     <>
       <div className="right-content w-100 ">
         <div className="card shadow border-0 w-100 flex-row p-4 m-0">
-          <h5 className="mb-0">Product List</h5>
+          <h5 className="mb-0">Order List</h5>
           <Breadcrumbs aria-label="breadcrumb" className="ml-auto breadcrumbs_">
             <StyledBreadcrumb
               component="a"
@@ -62,16 +62,8 @@ const ProductList = () => {
               label="Dashboard"
               icon={<DynamicIcon iconName="Home" />}
             />
-            <StyledBreadcrumb
-              component="a"
-              href="/product-list"
-              label="Product"
-            />
-            <StyledBreadcrumb
-              component="a"
-              href="/product-list"
-              label="Product List"
-            />
+            <StyledBreadcrumb component="a" href="/orders" label="Orders" />
+            <StyledBreadcrumb component="text" label="Order List" />
           </Breadcrumbs>
         </div>
 
@@ -192,51 +184,33 @@ const ProductList = () => {
               <thead className="thead-dark">
                 <tr>
                   <th>UID</th>
+                  <th>CLIENT</th>
                   <th>PRODUCT</th>
-                  <th>CATEGORY</th>
-                  <th>BRAND</th>
-                  <th>PRICE</th>
-                  <th>STOCK</th>
-                  <th>RATING</th>
-                  <th>ORDER</th>
-                  <th>SALES</th>
+                  <th>AMOUNT</th>
+                  <th>PAYMENT</th>
+                  <th>STATUS</th>
+                  <th>DATE TIME</th>
                   <th>ACTION</th>
                 </tr>
               </thead>
 
               <tbody>
                 <tr>
-                  <td>#1</td>
+                  <td>#1001</td>
                   <td>
                     <div className="d-flex align-items-center productBox">
-                      <div className="imgWrapper">
-                        <div className="img">
-                          <img
-                            src={Images.Skirt}
-                            alt="skirt"
-                            className="w-100"
-                          />
-                        </div>
-                      </div>
-                      <div className="info pl-0">
-                        <h6>Tops and skirt set for Female</h6>
-                        <p>
-                          Women's exclusive summer Tops and skirt set for Female
-                          Tops and skirt set
-                        </p>
+                      <UserImg img={Images.userImg} />
+                      <div className="info pl-2">
+                        <h6>Aaditya Revadkar</h6>
                       </div>
                     </div>
                   </td>
-                  <td>womens</td>
-                  <td>richman</td>
-                  <td>
-                    <del className="old">₹210</del>
-                    <span className="new text-success">₹190</span>
-                  </td>
-                  <td>30</td>
-                  <td>4.9</td>
-                  <td>380</td>
-                  <td>₹38k</td>
+                  <td>(5) Item</td>
+                  <td>₹4000</td>
+                  <td>UPI</td>
+                  <td><p className="badgeBg green">Received</p></td>
+                  <td>10/1/2025 15:02</td>
+
                   <td>
                     <div className="d-flex actions align-items-center">
                       <Button color="secondary" className="secondary">
@@ -252,37 +226,21 @@ const ProductList = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td>#1</td>
+                  <td>#1002</td>
                   <td>
                     <div className="d-flex align-items-center productBox">
-                      <div className="imgWrapper">
-                        <div className="img">
-                          <img
-                            src={Images.Skirt}
-                            alt="skirt"
-                            className="w-100"
-                          />
-                        </div>
-                      </div>
-                      <div className="info pl-0">
-                        <h6>Tops and skirt set for Female</h6>
-                        <p>
-                          Women's exclusive summer Tops and skirt set for Female
-                          Tops and skirt set
-                        </p>
+                      <UserImg img={Images.userImg} />
+                      <div className="info pl-2">
+                        <h6>Aaditya Revadkar</h6>
                       </div>
                     </div>
                   </td>
-                  <td>womens</td>
-                  <td>richman</td>
-                  <td>
-                    <del className="old">₹210</del>
-                    <span className="new text-success">₹190</span>
-                  </td>
-                  <td>30</td>
-                  <td>4.9</td>
-                  <td>380</td>
-                  <td>₹38k</td>
+                  <td>(3) Item</td>
+                  <td>₹2050</td>
+                  <td>UPI</td>
+                  <td><p className="badgeBg blue">Shipped</p></td>
+                  <td>10/1/2025 15:02</td>
+
                   <td>
                     <div className="d-flex actions align-items-center">
                       <Button color="secondary" className="secondary">
@@ -298,37 +256,23 @@ const ProductList = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td>#1</td>
+                  <td>#1003</td>
                   <td>
                     <div className="d-flex align-items-center productBox">
-                      <div className="imgWrapper">
-                        <div className="img">
-                          <img
-                            src={Images.Skirt}
-                            alt="skirt"
-                            className="w-100"
-                          />
-                        </div>
-                      </div>
-                      <div className="info pl-0">
-                        <h6>Tops and skirt set for Female</h6>
-                        <p>
-                          Women's exclusive summer Tops and skirt set for Female
-                          Tops and skirt set
-                        </p>
+                      <UserImg img={Images.userImg} />
+                      <div className="info pl-2">
+                        <h6>Aaditya Revadkar</h6>
                       </div>
                     </div>
                   </td>
-                  <td>womens</td>
-                  <td>richman</td>
+                  <td>(1) Item</td>
+                  <td>₹200</td>
+                  <td>UPI</td>
                   <td>
-                    <del className="old">₹210</del>
-                    <span className="new text-success">₹190</span>
+                    <p className="badgeBg purple">Pending</p>
                   </td>
-                  <td>30</td>
-                  <td>4.9</td>
-                  <td>380</td>
-                  <td>₹38k</td>
+                  <td>10/1/2025 15:02</td>
+
                   <td>
                     <div className="d-flex actions align-items-center">
                       <Button color="secondary" className="secondary">
@@ -344,37 +288,21 @@ const ProductList = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td>#1</td>
+                  <td>#1004</td>
                   <td>
                     <div className="d-flex align-items-center productBox">
-                      <div className="imgWrapper">
-                        <div className="img">
-                          <img
-                            src={Images.Skirt}
-                            alt="skirt"
-                            className="w-100"
-                          />
-                        </div>
-                      </div>
-                      <div className="info pl-0">
-                        <h6>Tops and skirt set for Female</h6>
-                        <p>
-                          Women's exclusive summer Tops and skirt set for Female
-                          Tops and skirt set
-                        </p>
+                      <UserImg img={Images.userImg} />
+                      <div className="info pl-2">
+                        <h6>Aaditya Revadkar</h6>
                       </div>
                     </div>
                   </td>
-                  <td>womens</td>
-                  <td>richman</td>
-                  <td>
-                    <del className="old">₹210</del>
-                    <span className="new text-success">₹190</span>
-                  </td>
-                  <td>30</td>
-                  <td>4.9</td>
-                  <td>380</td>
-                  <td>₹38k</td>
+                  <td>(4) Item</td>
+                  <td>₹2000</td>
+                  <td>UPI</td>
+                  <td><p className="badgeBg blue">Shipped</p></td>
+                  <td>10/1/2025 15:02</td>
+
                   <td>
                     <div className="d-flex actions align-items-center">
                       <Button color="secondary" className="secondary">
@@ -390,37 +318,21 @@ const ProductList = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td>#1</td>
+                  <td>#1005</td>
                   <td>
                     <div className="d-flex align-items-center productBox">
-                      <div className="imgWrapper">
-                        <div className="img">
-                          <img
-                            src={Images.Skirt}
-                            alt="skirt"
-                            className="w-100"
-                          />
-                        </div>
-                      </div>
-                      <div className="info pl-0">
-                        <h6>Tops and skirt set for Female</h6>
-                        <p>
-                          Women's exclusive summer Tops and skirt set for Female
-                          Tops and skirt set
-                        </p>
+                      <UserImg img={Images.userImg} />
+                      <div className="info pl-2">
+                        <h6>Aaditya Revadkar</h6>
                       </div>
                     </div>
                   </td>
-                  <td>womens</td>
-                  <td>richman</td>
-                  <td>
-                    <del className="old">₹210</del>
-                    <span className="new text-success">₹190</span>
-                  </td>
-                  <td>30</td>
-                  <td>4.9</td>
-                  <td>380</td>
-                  <td>₹38k</td>
+                  <td>(2) Item</td>
+                  <td>₹1500</td>
+                  <td>UPI</td>
+                  <td><p className="badgeBg red">Cancelled</p></td>
+                  <td>10/1/2025 15:02</td>
+
                   <td>
                     <div className="d-flex actions align-items-center">
                       <Button color="secondary" className="secondary">
@@ -436,129 +348,21 @@ const ProductList = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td>#1</td>
+                  <td>#1006</td>
                   <td>
                     <div className="d-flex align-items-center productBox">
-                      <div className="imgWrapper">
-                        <div className="img">
-                          <img
-                            src={Images.Skirt}
-                            alt="skirt"
-                            className="w-100"
-                          />
-                        </div>
-                      </div>
-                      <div className="info pl-0">
-                        <h6>Tops and skirt set for Female</h6>
-                        <p>
-                          Women's exclusive summer Tops and skirt set for Female
-                          Tops and skirt set
-                        </p>
+                      <UserImg img={Images.userImg} />
+                      <div className="info pl-2">
+                        <h6>Aaditya Revadkar</h6>
                       </div>
                     </div>
                   </td>
-                  <td>womens</td>
-                  <td>richman</td>
-                  <td>
-                    <del className="old">₹210</del>
-                    <span className="new text-success">₹190</span>
-                  </td>
-                  <td>30</td>
-                  <td>4.9</td>
-                  <td>380</td>
-                  <td>₹38k</td>
-                  <td>
-                    <div className="d-flex actions align-items-center">
-                      <Button color="secondary" className="secondary">
-                        <DynamicIcon iconName="Visibility" />
-                      </Button>
-                      <Button color="success" className="success">
-                        <DynamicIcon iconName="Create" />
-                      </Button>
-                      <Button color="error" className="error">
-                        <DynamicIcon iconName="Delete" />
-                      </Button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>#1</td>
-                  <td>
-                    <div className="d-flex align-items-center productBox">
-                      <div className="imgWrapper">
-                        <div className="img">
-                          <img
-                            src={Images.Skirt}
-                            alt="skirt"
-                            className="w-100"
-                          />
-                        </div>
-                      </div>
-                      <div className="info pl-0">
-                        <h6>Tops and skirt set for Female</h6>
-                        <p>
-                          Women's exclusive summer Tops and skirt set for Female
-                          Tops and skirt set
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>womens</td>
-                  <td>richman</td>
-                  <td>
-                    <del className="old">₹210</del>
-                    <span className="new text-success">₹190</span>
-                  </td>
-                  <td>30</td>
-                  <td>4.9</td>
-                  <td>380</td>
-                  <td>₹38k</td>
-                  <td>
-                    <div className="d-flex actions align-items-center">
-                      <Button color="secondary" className="secondary">
-                        <DynamicIcon iconName="Visibility" />
-                      </Button>
-                      <Button color="success" className="success">
-                        <DynamicIcon iconName="Create" />
-                      </Button>
-                      <Button color="error" className="error">
-                        <DynamicIcon iconName="Delete" />
-                      </Button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>#1</td>
-                  <td>
-                    <div className="d-flex align-items-center productBox">
-                      <div className="imgWrapper">
-                        <div className="img">
-                          <img
-                            src={Images.Skirt}
-                            alt="skirt"
-                            className="w-100"
-                          />
-                        </div>
-                      </div>
-                      <div className="info pl-0">
-                        <h6>Tops and skirt set for Female</h6>
-                        <p>
-                          Women's exclusive summer Tops and skirt set for Female
-                          Tops and skirt set
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>womens</td>
-                  <td>richman</td>
-                  <td>
-                    <del className="old">₹210</del>
-                    <span className="new text-success">₹190</span>
-                  </td>
-                  <td>30</td>
-                  <td>4.9</td>
-                  <td>380</td>
-                  <td>₹38k</td>
+                  <td>(1) Item</td>
+                  <td>₹450</td>
+                  <td>UPI</td>
+                  <td><p className="badgeBg purple">Pending</p></td>
+                  <td>10/1/2025 15:02</td>
+
                   <td>
                     <div className="d-flex actions align-items-center">
                       <Button color="secondary" className="secondary">
@@ -596,4 +400,4 @@ const ProductList = () => {
   );
 };
 
-export default ProductList;
+export default Orders;

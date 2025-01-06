@@ -11,6 +11,7 @@ import {
   ProductDetails,
   ProductUpload,
   ProductList,
+  Orders,
 } from "./pages";
 import { Header, Sidebar, Footer } from "./components";
 import AuthLayout from "./Layouts/AuthLayouts";
@@ -68,9 +69,13 @@ function App() {
                 <div className={`content ${isToggle === true ? "toggle" : ""}`}>
                   <Routes>
                     <Route path="/" element={<Dashboard />} />
-                    <Route path="/product-details" element={<ProductDetails />} />
+                    <Route
+                      path="/product-details"
+                      element={<ProductDetails />}
+                    />
                     <Route path="/product-upload" element={<ProductUpload />} />
                     <Route path="/product-list" element={<ProductList />} />
+                    <Route path="/orders" element={<Orders />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                   <Footer />

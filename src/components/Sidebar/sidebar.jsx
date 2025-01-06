@@ -102,7 +102,7 @@ const Sidebar = () => {
           </div>
         </li>
         <li>
-          <Link to={"/"}>
+          <Link to={"/orders"}>
             <Button
               className={`w-100 ${
                 isActive === 3 && isToggle === true ? "active" : ""
@@ -113,9 +113,7 @@ const Sidebar = () => {
                 <DynamicIcon iconName="ShoppingCart" />
               </span>
               Orders
-              <span className="arrow">
-                <DynamicIcon iconName="KeyboardArrowRight" />
-              </span>
+              <span className="ml-auto badge">3</span>
             </Button>
           </Link>
         </li>

@@ -49,10 +49,10 @@ const Box = (props) => {
         <Button
           className="float-btn"
           style={{
-            backgroundImage: `linear-gradient(to right, ${props.color?.[0]} , ${props.color?.[1]})`,
+            backgroundImage: `linear-gradient(${props.color?.[0]} , ${props.color?.[1]})`,
           }}
         >
-          <div className="d-flex">
+          <div className="d-flex align-items-center p-2">
             <h3>547</h3>
             <p>pending orders</p>
             {props.icon ? (
